@@ -1,13 +1,13 @@
 import mongoose from 'mongoose'
-import mongoConfig from '../config/db.config'
+import { URI_DATABASE } from '../settings'
 
 export const connectDatabase = () => {
   return new Promise((resolve, reject) => {
     mongoose.Promise = Promise
 
-    const { uri, options } = mongoConfig
-    mongoose
-      .connect(uri, options)
+    mongoose.connect(URI_DATABASE, {
+        useNewUrlParser: true
+      })
       .then(resolve)
       .catch(reject)
   })
