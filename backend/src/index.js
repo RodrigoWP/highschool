@@ -1,5 +1,5 @@
-import createServer from './utils/create-server'
-import * as mongo from './utils/mongoose'
+import { connectDatabase } from './database'
+import { createServer } from './server'
 
-mongo.connect()
-export default createServer()
+connectDatabase()
+createServer()

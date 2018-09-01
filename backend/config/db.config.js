@@ -6,8 +6,10 @@ const configs = {
     options: {}
   },
   'development': {
-    uri: 'mongodb://highschool:Qweiop123@ds141812.mlab.com:41812/highschool-dev',
-    options: {}
+    uri: 'mongodb://admin:qweiop123@ds141812.mlab.com:41812/highschool-dev',
+    options: {
+      useNewUrlParser: true
+    }
   }
 }
 

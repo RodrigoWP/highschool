@@ -5,8 +5,8 @@ const typeDefs = `
     name: String!
   }
   type Query {
-    Students: [Student]!
-    Student(id: ID!): Student
+    students: [Student]!
+    student(id: ID!): Student
   }
   type Mutation {
     createStudent(

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
-import mongoConfig from '../../config/mongo.config'
+import mongoConfig from '../config/db.config'
 
-const connect = () => {
+export const connectDatabase = () => {
   return new Promise((resolve, reject) => {
     mongoose.Promise = Promise
 
@@ -12,5 +12,3 @@ const connect = () => {
       .catch(reject)
   })
 }
-
-export { connect }
