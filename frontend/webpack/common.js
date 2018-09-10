@@ -3,7 +3,8 @@ const { join } = require('path')
 const paths = {
   root: join(__dirname, '..'),
   src: join(__dirname, '..', 'src'),
-  dist: join(__dirname, '..', 'dist')
+  dist: join(__dirname, '..', 'dist'),
+  grommentPath: join(__dirname, '..', 'node_modules')
 }
 
 module.exports = {
@@ -29,6 +30,25 @@ module.exports = {
     use: [{
       loader: 'babel-loader'
     }]
+  },
+
+  grommetLoader: {
+    test: /\.scss$/,
+    use: [
+      {
+        loader: 'style-loader'
+      },
+      {
+        loader: 'css-loader'
+      },
+      {
+        loader: 'sass-loader', options: {
+          includePaths: [
+            './node_modules'
+          ]
+        }
+      }
+    ]
   },
 
   resolve: {

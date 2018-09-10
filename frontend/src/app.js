@@ -1,20 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { injectGlobal } from 'styled-components'
 
-import Student from 'containers/student'
-
-injectGlobal`
-  html,
-  body {
-    font-family: 'Open Sans Condensed', sans-serif;
-  }
-`
+import Main from 'containers'
 
 const App = () => (
   <Router>
     <Switch>
-      <Route exact path='/' component={Student} />
+      <Route path='/' component={Main} />
     </Switch>
   </Router>
 )
